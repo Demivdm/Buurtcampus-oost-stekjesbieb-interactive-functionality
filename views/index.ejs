@@ -1,0 +1,66 @@
+<%- include('./partials/header.ejs') %>
+<main>
+  <!-- HOMEPAGE -->
+  <h1>Plant Swap</h1>
+
+  <section class="split-background">
+    <a href="#stekjes" class="homepage-button-left">Stekjes</a>
+    <a href="plantForm.ejs" class="homepage-button-right">Ruilen</a>
+    <h2>Hoe werkt het?</h2>
+  </section>
+  <!-- START INSTRUCTIONS -->
+  <article class="plant-instruction">
+    <h2>Hoe het werkt</h2>
+    <ol>
+      <li>
+        stap 1
+        <p>Dit is hoe de eerste stap werkt</p>
+      </li>
+      <li>
+        stap 2
+        <p>Dit is hoe de eerste stap werkt</p>
+      </li>
+      <li>
+        stap 3
+        <p>Dit is hoe de eerste stap werkt</p>
+      </li>
+    </ol>
+  </article>
+  <!-- END INSTRUCTIONS -->
+  <!-- START PLANT OVERZICHT -->
+  <section class="plant-container">
+    <% stekjes.forEach(stekje => { %>
+    <div class="plant-card">
+        <div class="plant-box">
+        <!-- front of card -->
+            <div class="front">
+              <div class="dot"></div>
+              <div class="content">
+                <img class="card-image" src="https://picsum.photos/250/300" alt="">
+                <h2><%= stekje.naam %></h2>
+              </div>
+            </div>
+            <!-- back of card -->
+            <div class="back">
+                <div class="dot"></div>
+                <div class="content">
+                  
+                  <h2><%= stekje.naam %></h2>
+                  <ul>
+                      <li><span>Verpotten</span> <%= stekje.verpotten %></li>
+                      <li><span>Giftig</span> <%= stekje.giftig %></li>
+                      <li><span>Land van herkomst</span> <%= stekje.landvanherkomst %></li>
+                      <li><span>Voeding</span> <%= stekje.voeding %></li>
+                  </ul>
+                </div>
+              </div>
+      </div>
+      </div>
+    </div>
+    </div>
+    <% }) %>
+  </section>
+  <!-- EIND PLANT OVERZICHT -->
+</main>
+
+<%- include('./partials/footer.ejs') %>
