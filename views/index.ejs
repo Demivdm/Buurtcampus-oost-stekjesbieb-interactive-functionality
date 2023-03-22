@@ -5,7 +5,7 @@
 
   <section class="split-background">
     <a href="#stekjes" class="homepage-button-left">Stekjes</a>
-    <a href="plantForm.ejs" class="homepage-button-right">Ruilen</a>
+    <a href="/new" class="homepage-button-right">Ruilen</a>
     <h2>Hoe werkt het?</h2>
   </section>
   <!-- START INSTRUCTIONS -->
@@ -36,7 +36,13 @@
             <div class="front">
               <div class="dot"></div>
               <div class="content">
-                <img class="card-image" src="https://picsum.photos/250/300" alt="">
+                <!-- je roept stekje aan en dan zet je [0] achter fotos omdat het een array is. Door de .width bij width wordt de width uit het css bestand gebruikt -->
+                <% if (stekje.fotos[0]){ %>
+                <img src="<%= stekje.fotos[0].small %>" alt="<%= stekje.naam %>" width="<%= stekje.fotos[0].width %>" height="<%= stekje.fotos[0].height %>">
+                <% }else{ %>
+                  <img src="assets/plant-placeholder.png" alt="">
+                  <% } %>
+                  
                 <h2><%= stekje.naam %></h2>
               </div>
             </div>

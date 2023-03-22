@@ -1,1 +1,91 @@
-<%- include('./partials/head.ejs') %> <%- include('./partials/foot.ejs') %>
+<%- include('./partials/header.ejs') %>
+<form action="/new" method="post">
+  <% if(locals.error !== undefined){ %>
+  <p class="message"><%= error %></p>
+  <% } %>
+  <fieldset>
+    <legend>Vul in</legend>
+    <label for="plant-options">Ik</label>
+
+    <select required name="squad" id="squads">
+      <option value="">kies een van de onderstaande opties</option>
+      <option value="">heb een stekje</option>
+      <option>wil een stekje</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>Gegevens van je plant</legend>
+
+    <label for="name">Naam van je plant</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      placeholder="Bijvoorbeeld Pothos"
+      value="<%= locals.naam ?? '' %>"
+    />
+
+    <label for="plant-food">Voeding</label>
+    <input
+      type="text"
+      name="voeding"
+      id="voeding"
+      placeholder="bv 1x per week"
+      value="<%= locals.voeding ?? '' %>"
+    />
+
+    <label for="surname">Giftig:</label>
+    <select required name="squad" id="squads">
+      <option value="">Selecteer een optie</option>
+      <option value="">Ja</option>
+      <option>Nee</option>
+    </select>
+    <input
+      type="text"
+      name="giftig"
+      id="giftig"
+      placeholder="Alleen giftig voor.."
+      value="<%= locals.giftig ?? '' %>"
+    />
+
+    <!-- <label for="Latijnse naam">Latijnse naam:</label>
+    <input
+      type="text"
+      name=""
+      id="nickname"
+      placeholder="bv Epipremnum aureum"
+      value=""
+    /> -->
+
+    <!-- <label for="nickname">Nickname:</label>
+    <input
+      type="text"
+      name="nickname"
+      id="nickname"
+      placeholder="bv Pietje de plant"
+      value=""
+    /> -->
+
+    <label for="repot">Verpotten:</label>
+    <input
+      type="text"
+      name="verpotten"
+      id="nickname"
+      placeholder="bv 1x per jaar"
+      value="<%= locals.verpotten ?? '' %>"
+    />
+
+    <label for="bio">Bijzonderheden</label>
+    <textarea
+      name="bio"
+      id="bio"
+      cols="30"
+      rows="10"
+      placeholder="..."
+    ></textarea>
+    <input type="submit" value="Verstuur" />
+  </fieldset>
+</form>
+
+<%- include('./partials/footer.ejs') %>

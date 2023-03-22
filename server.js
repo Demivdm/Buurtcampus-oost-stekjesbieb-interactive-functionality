@@ -10,6 +10,9 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
 
+app.get('/new', (request, response) => {
+  response.render('plantForm')
+})
 // Maak een route voor de index
 app.get('/', (request, response) => {
   let stekjesUrl = url + '/stekjes'
@@ -19,22 +22,29 @@ app.get('/', (request, response) => {
   })
 })
 
-// app.get('/sprint', (request, response) => {
-//   let slug = request.query.sprintSlug || 'your-tribe'
-//   let sprintUrl = url + '/sprint/' + slug
-//   fetchJson(sprintUrl).then((data) => {
-//     // console.log(data)
-//     response.render('sprint', data)
-//   })
-// })
 
-// app.get('/over', (request, response) => {
-//   response.render('over')
-// })
 
-// app.get('/contact', (request, response) => {
-//   response.render('contact')
-// })
+// functie om te posten
+
+app.post('/new', (request, response) => {
+  const stekjesUrl = 'https://api.buurtcampus-oost.fdnd.nl/api/v1'
+
+  const url = `${stekjesUrl}/stekjes`
+
+  postJson(url, request.body).then((data) => {
+    let newPlant = { ... request.body }
+
+    if (data.success) {
+      response.redirect('/?stekjesPosted=true') 
+    } else {
+      const errormessage = `${data.message}: Mogelijk komt dit door de slug die al bestaat.`
+      const newdata = { error: errormessage, values: newPlant }
+      
+      response.render('plantForm', newdata)
+      console.log(errormessage)
+    }
+  })
+})
 
 // Stel het poortnummer in en start express
 app.set('port', process.env.PORT || 8000)
@@ -51,4 +61,22 @@ async function fetchJson(url) {
   return await fetch(url)
     .then((response) => response.json())
     .catch((error) => error)
+}
+
+
+// * postJson() is a wrapper for the experimental node fetch api. It fetches the url
+// * passed as a parameter using the POST method and the value from the body paramater
+// * as a payload. It returns the response body parsed through json.
+// * @param {*} url the api endpoint to address
+// * @param {*} body the payload to send along
+// * @returns the json response from the api endpoint
+
+export async function postJson(url, body) {
+ return await fetch(url, {
+   method: 'post',
+   body: JSON.stringify(body),
+   headers: { 'Content-Type': 'application/json' },
+ })
+   .then((response) => response.json())
+   .catch((error) => error)
 }
