@@ -10,10 +10,12 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
 
-app.get('/new', (request, response) => {
+// routes
+
+app.get('/stekjesform', (request, response) => {
   response.render('plantForm')
 })
-// Maak een route voor de index
+
 app.get('/', (request, response) => {
   let stekjesUrl = url + '/stekjes'
 
@@ -26,7 +28,7 @@ app.get('/', (request, response) => {
 
 // functie om te posten
 
-app.post('/new', (request, response) => {
+app.post('/stekjesform', (request, response) => {
   const stekjesUrl = 'https://api.buurtcampus-oost.fdnd.nl/api/v1'
 
   const url = `${stekjesUrl}/stekjes`
