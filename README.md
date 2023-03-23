@@ -1,34 +1,83 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+# Stekjesbieb Buurtcampus oost
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+Dit is een pagina voor buurtcampus oost. Op deze pagina kan de gebruiker de huidige stekjes bekijken en eventueel ruilen.
 
 ## Inhoudsopgave
 
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+
+* [Beschrijving](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/blob/main/README.md#beschrijving) 
+
+* [Kenmerken](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/blob/main/README.md#kenmerken) 
+
+* [Installatie](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/blob/main/README.md#installatie)
+
+* [MoSCoW checklist](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/blob/main/README.md#-moscow-checklist)
+
+* [Licentie](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/blob/main/README.md#licentie)
+
+
 
 ## Beschrijving
-<!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
 
-## Gebruik
-<!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+User stories uitwerken op basis van dynamische data uit een API. Vertrekpunt is een overzichtspagina van de belangrijkste content met verwijzingen naar detailpagina's.
+
+Userstory: Als buurtbewoner wil ik kunnen zien welke stekjes momenteel in de stekjeskast zitten, zodat ik kan overwegen een stekje om te ruilen
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+
+Dit project is gemaakt met HTML, CSS en Javascript. Verder staat hieronder een korte lijst met gebruikte tools en middelen.
+
+**Tools**
+
+🖥️ Visual Studio Code
+
+🔥 Figma
+
+✍ Pen, papier en tekentablet
+
+📒Node.js
+
+**Gebruikte technieken**
+
+📟 HTML
+
+⌚ CSS
 
 ## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+
+1. Installeer NodeJS
+2. Clone of download deze respository.
+3. Open de terminal
+4. Voer npm install uit (of npm i) in de terminal
+5. Wanneer alles is geinstalleerd, voer npm start uit.
+6. De applicatie wordt gehost op http://localhost:8000/
 
 
-## Bronnen
+## 🎩 MoSCoW checklist
+
+**Must have**
+  
+  ✅Mobiele versie
+  
+  ✅Desktop versie
+ 
+
+**Should have**
+
+  ❌styling
+
+**Could have**
+
+  ❌Plant scroll animatie
+
+**Won't have**
+
+  🦸‍♀️Nothing is impossible
+
+_tip!_ check mijn [issues](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/issues) om te kijken waar ik momenteel mee bezig ben.
 
 ## Licentie
 
-This project is licensed under the terms of the [MIT license](./LICENSE).
+![GNU GPL V3](https://www.gnu.org/graphics/gplv3-127x51.png)
+
+This work is licensed under [GNU GPLv3](./LICENSE).
