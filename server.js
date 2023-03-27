@@ -8,11 +8,16 @@ const app = express()
 // Stel in hoe we express gebruiken
 app.set('view engine', 'ejs')
 app.set('views', './views')
+
+// express afhandeling voor json
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}))
+// selecteert welke statische pagina er wordt getoont
 app.use(express.static('public'))
 
 // routes
 
-app.get('/stekjesform', (request, response) => {
+app.get('/create-stekje', (request, response) => {
   response.render('plantForm')
 })
 
@@ -28,22 +33,17 @@ app.get('/', (request, response) => {
 
 // functie om te posten
 
-app.post('/stekjesform', (request, response) => {
+app.post('/create-stekje', (request, response) => {
   const stekjesUrl = 'https://api.buurtcampus-oost.fdnd.nl/api/v1'
-
-  const url = `${stekjesUrl}/stekjes`
+  const url = stekjesUrl + '/stekjes'
 
   postJson(url, request.body).then((data) => {
-    let newPlant = { ... request.body }
+    let newStekje = { ... request.body}
 
     if (data.success) {
-      response.redirect('/?stekjesPosted=true') 
-    } else {
-      const errormessage = `${data.message}: Mogelijk komt dit door de slug die al bestaat.`
-      const newdata = { error: errormessage, values: newPlant }
-      
-      response.render('plantForm', newdata)
-      console.log(errormessage)
+      response.redirect('/')
+
+      console.log("Stekje redirected", newStekje);
     }
   })
 })

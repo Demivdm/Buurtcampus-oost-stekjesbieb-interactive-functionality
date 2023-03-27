@@ -1,10 +1,10 @@
 <%- include('./partials/header.ejs') %>
-<form action="/new" method="post">
-  <% if(locals.error !== undefined){ %>
+<form action="/create-stekje" method="post">
+  <!-- <% if(locals.error !== undefined){ %>
   <p class="message"><%= error %></p>
-  <% } %>
-  <fieldset>
-    <legend>Vul in</legend>
+  <% } %> -->
+  <!-- <fieldset> -->
+  <!-- <legend>Vul in</legend>
     <label for="plant-options">Ik</label>
 
     <select required name="stekjes" id="stekjes">
@@ -12,20 +12,20 @@
       <option value="">heb een stekje</option>
       <option>wil een stekje</option>
     </select>
-  </fieldset>
+  </fieldset> -->
 
   <fieldset>
     <legend>Gegevens van je plant</legend>
 
-    <label for="name">Naam van je plant</label>
+    <label for="naam">Naam van je plant</label>
     <input
       type="text"
-      name="name"
-      id="name"
+      name="naam"
+      id="naam"
       placeholder="Bijvoorbeeld Pothos"
-      value="<%= locals.naam ?? '' %>"
+      value="<% locals.naam ?? '' %>"
     />
-
+    <!--
     <label for="plant-food">Voeding</label>
     <input
       type="text"
@@ -46,36 +46,36 @@
       name="giftig"
       id="giftig"
       placeholder="Alleen giftig voor.."
-      value="<%= locals.giftig ?? '' %>"
+      value="<% locals.giftig ?? '' %>"
     />
 
-    <!-- <label for="Latijnse naam">Latijnse naam:</label>
+     <label for="Latijnse naam">Latijnse naam:</label>
     <input
       type="text"
       name=""
       id="nickname"
       placeholder="bv Epipremnum aureum"
       value=""
-    /> -->
+    /> 
 
-    <!-- <label for="nickname">Nickname:</label>
+    < <label for="nickname">Nickname:</label>
     <input
       type="text"
       name="nickname"
       id="nickname"
       placeholder="bv Pietje de plant"
       value=""
-    /> -->
+    /> 
 
     <label for="repot">Verpotten:</label>
     <input
       type="text"
       name="verpotten"
-      id="nickname"
+      id="verpotten"
       placeholder="bv 1x per jaar"
-      value="<%= locals.verpotten ?? '' %>"
+      value="<% locals.verpotten ?? '' %>"
     />
-
+    
     <label for="bio">Bijzonderheden</label>
     <textarea
       name="bio"
@@ -83,7 +83,7 @@
       cols="30"
       rows="10"
       placeholder="..."
-    ></textarea>
+    ></textarea> -->
     <input type="submit" value="Verstuur" />
   </fieldset>
 </form>
