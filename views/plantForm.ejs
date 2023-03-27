@@ -1,32 +1,26 @@
 <%- include('./partials/header.ejs') %>
-<form action="/create-stekje" method="post">
-  <!-- <% if(locals.error !== undefined){ %>
-  <p class="message"><%= error %></p>
-  <% } %> -->
-  <!-- <fieldset> -->
-  <!-- <legend>Vul in</legend>
-    <label for="plant-options">Ik</label>
 
-    <select required name="stekjes" id="stekjes">
-      <option value="">kies een van de onderstaande opties</option>
-      <option value="">heb een stekje</option>
-      <option>wil een stekje</option>
-    </select>
-  </fieldset> -->
+<form action="/create-stekje" method="post">
+  <% if(locals.errors !== undefined){ %> <% errors.forEach(error => { %> <%
+  if(error.field == "naam") {%>
+  <p>
+    Oeps! Het lijkt erop dat je de naam van je plant niet goed hebt ingevuld
+  </p>
+  <% } %> <% }) %> <% } %> <%= locals.newData %>
 
   <fieldset>
     <legend>Gegevens van je plant</legend>
 
-    <label for="naam">Naam van je plant</label>
+    <label required="naam" for="naam">Naam van je plant</label>
     <input
       type="text"
       name="naam"
       id="naam"
       placeholder="Bijvoorbeeld Pothos"
-      value="<% locals.naam ?? '' %>"
+      value="<%= locals.naam ?? '' %>"
     />
-    <!--
-    <label for="plant-food">Voeding</label>
+
+    <label for="voeding">Voeding</label>
     <input
       type="text"
       name="voeding"
@@ -35,12 +29,16 @@
       value="<%= locals.voeding ?? '' %>"
     />
 
-    <label for="surname">Giftig:</label>
-    <select required name="giftig" id="giftig">
-      <option value="">Selecteer een optie</option>
-      <option value="">Ja</option>
-      <option>Nee</option>
-    </select>
+    <label for="landvanherkomst">Land van herkomst</label>
+    <input
+      type="text"
+      name="landvanherkomst"
+      id="landvanherkomst"
+      placeholder="bv Afrika"
+      value="<%= locals.landvanherkomst ?? '' %>"
+    />
+
+    <label for="giftig">Giftig:</label>
     <input
       type="text"
       name="giftig"
@@ -49,25 +47,7 @@
       value="<% locals.giftig ?? '' %>"
     />
 
-     <label for="Latijnse naam">Latijnse naam:</label>
-    <input
-      type="text"
-      name=""
-      id="nickname"
-      placeholder="bv Epipremnum aureum"
-      value=""
-    /> 
-
-    < <label for="nickname">Nickname:</label>
-    <input
-      type="text"
-      name="nickname"
-      id="nickname"
-      placeholder="bv Pietje de plant"
-      value=""
-    /> 
-
-    <label for="repot">Verpotten:</label>
+    <label for="verpotten">Verpotten:</label>
     <input
       type="text"
       name="verpotten"
@@ -75,15 +55,15 @@
       placeholder="bv 1x per jaar"
       value="<% locals.verpotten ?? '' %>"
     />
-    
-    <label for="bio">Bijzonderheden</label>
+
+    <label for="description">Beschrijving</label>
     <textarea
-      name="bio"
-      id="bio"
+      name="description"
+      id="description"
       cols="30"
       rows="10"
       placeholder="..."
-    ></textarea> -->
+    ></textarea>
     <input type="submit" value="Verstuur" />
   </fieldset>
 </form>

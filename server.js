@@ -9,9 +9,10 @@ const app = express()
 app.set('view engine', 'ejs')
 app.set('views', './views')
 
-// express afhandeling voor json
+// Express afhandeling voor json Dit vertelt hoe express met json om moet gaan
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}))
+
 // selecteert welke statische pagina er wordt getoont
 app.use(express.static('public'))
 
@@ -41,10 +42,18 @@ app.post('/create-stekje', (request, response) => {
     let newStekje = { ... request.body}
 
     if (data.success) {
+      
       response.redirect('/')
-
-      console.log("Stekje redirected", newStekje);
     }
+
+    else {
+    //  hier maak je een variabel en vertel je welke data er in errors zit
+
+      const newdata = { errors: data.errors, values: newStekje }
+      
+      response.render('plantForm', newdata)
+    }
+    
   })
 })
 
