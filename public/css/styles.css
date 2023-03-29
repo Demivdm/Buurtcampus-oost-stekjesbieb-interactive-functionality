@@ -1,4 +1,32 @@
+
+*{
+    box-sizing: border-box;
+}
 img{
     width: 100px;
     height: 100px;
 }
+:root{
+ --big-font: 1rem;
+ --color-black: black;
+}
+
+/* nav styling */
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
+    font-size: var(--big-font);
+    
+    
+}
+
+li > a{
+    text-decoration: none;
+    color: var(--color-black);
+}
+/* end of nav styling */
