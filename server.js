@@ -26,7 +26,10 @@ app.get('/', (request, response) => {
   let stekjesUrl = url + '/stekjes'
 
   fetchJson(stekjesUrl).then((data) => {
-    response.render('index', data)
+
+    // stekjes en posted zijn objecten. Hier vertel ik wat(data.stekjes en .posted) de pagina moet ophalen als deze opnieuw geladen wordt.
+    
+    response.render('index', {stekjes: data.stekjes, posted: request.query.posted})
   })
 })
 
@@ -42,8 +45,8 @@ app.post('/create-stekje', (request, response) => {
     let newStekje = { ... request.body}
 
     if (data.success) {
-      
-      response.redirect('/')
+      // als het posten succesvol was dan wordt de gebruiker naar wordt er posted achter de link geplakt
+      response.redirect('/?posted=true#post-succes')
     }
 
     else {
