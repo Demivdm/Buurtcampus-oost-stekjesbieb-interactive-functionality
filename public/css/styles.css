@@ -7,8 +7,10 @@ img{
     height: 100px;
 }
 :root{
- --big-font: 1rem;
+ --big-font: 1.5rem;
+ --medium-font: 3rem;
  --color-black: black;
+ --huge-font: 5rem
 }
 
 /* nav styling */
@@ -30,3 +32,55 @@ li > a{
     color: var(--color-black);
 }
 /* end of nav styling */
+
+h1 {
+    position: relative;
+    text-align: center;
+    font-size: var(--huge-font);
+    margin-bottom: 10rem;
+}
+
+.split-background{
+    display: flex;
+    justify-content: space-around;
+    font-size: var(--medium-font);
+    height: 30vh;
+}
+
+.instruction-button{
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto;
+}
+
+.instruction-button > button{
+    font-size: 2rem;
+}
+
+/* eind homepage styling */
+
+/* start instructie styling */
+
+.plant-instruction{
+   
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 35rem;
+    margin: 5rem auto;
+    
+}
+
+.plant-instruction > h2, ol{
+    left: 2rem;
+    position: relative;
+    font-size: var(--big-font);
+}
+
+ol{
+    margin: 0;
+    padding: 0;
+}
+.plant-instruction > h2 {
+    font-size: var(--medium-font);
+}
