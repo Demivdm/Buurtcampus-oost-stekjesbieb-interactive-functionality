@@ -7,13 +7,20 @@ img{
     height: 100px;
 }
 :root{
- --big-font: 1.5rem;
- --medium-font: 3rem;
+    /* font sizes */
+ --phone-font-small: 1.2rem;
+ --phone-font-betweenium: 2rem;
+ --phone-font-medium: 3rem;
+ --phone-font-huge: 5rem;
+--desktop-font-small: 2rem;
+ /* colors */
  --color-black: black;
- --huge-font: 5rem
 }
 
+body{
+    overflow-x: hidden;
 /* nav styling */
+}
 .navigation{
     display: flex;
     flex-direction: row;
@@ -22,7 +29,7 @@ img{
     padding: 0;
     margin: 0 auto;
     list-style-type: none;
-    font-size: var(--big-font);
+    font-size: var(--phone-font-small);
     
     
 }
@@ -36,14 +43,14 @@ li > a{
 h1 {
     position: relative;
     text-align: center;
-    font-size: var(--huge-font);
+    font-size: var(--phone-font-huge);
     margin-bottom: 10rem;
 }
 
 .split-background{
     display: flex;
     justify-content: space-around;
-    font-size: var(--medium-font);
+    font-size: var(--phone-font-medium);
     height: 30vh;
 }
 
@@ -54,7 +61,7 @@ h1 {
 }
 
 .instruction-button > button{
-    font-size: 2rem;
+    font-size: var(--phone-font-betweenium);
 }
 
 /* eind homepage styling */
@@ -66,7 +73,7 @@ h1 {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    width: 35rem;
+    width: 25rem;
     margin: 5rem auto;
     
 }
@@ -74,7 +81,7 @@ h1 {
 .plant-instruction > h2, ol{
     left: 2rem;
     position: relative;
-    font-size: var(--big-font);
+    font-size: var(--phone-font-small);
 }
 
 ol{
@@ -82,12 +89,27 @@ ol{
     padding: 0;
 }
 .plant-instruction > h2 {
-    font-size: var(--medium-font);
+    font-size: var(--phone-font-medium);
 }
+
 
 /* start kaartjes styling */
 
-.plant-card-title{
+/* succes message styling */
+.succes-container{
+    width: 20rem;
+    margin: auto;
+}
+
+#post-succes{
+    font-size: var(--phone-font-betweenium);
+    text-align: center;
+    margin: 1rem;
+    border: 1px solid black;
+    width: 100%;
+}
+
+/* .plant-card-title{
     position: relative;
     font-size: 45px;
     text-align: center;
@@ -160,14 +182,16 @@ ol{
     z-index: 1;
     position: absolute;
     top: .2rem;
-}
+} */
 /* backup css kaartje */
-/* .plant-container{
+.plant-container{
 background-color: transparent;
-width: 20rem;
-height: 20rem;
 border: 1px solid black;
 perspective: 1000px;
+position: relative;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
 }
 
 .plant-card{
@@ -196,4 +220,73 @@ perspective: 1000px;
 .back{
     transform: rotateY(180deg);
     background-color: blue;
-} */
+}
+
+/* FORM STYLING */
+form {
+    width: 50vw;
+    margin: auto;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    font-size: var(--phone-font-small);
+  }
+  
+legend{
+    font-size: var(--phone-font-betweenium);
+}
+  
+  fieldset {
+    padding: 1rem;
+  }
+  
+  label {
+    margin: 1rem 0 0.2rem;
+    display: block;
+    
+  }
+  
+  
+ 
+  
+  input[type='text'] {
+    width: 100%;
+    height: 3em;
+    font-size: var(--phone-font-small);
+  }
+
+  input[type='text']:focus {
+    background-color: aliceblue;
+  }
+  
+  input[type='submit'] {
+   width: 100%;
+    transition: 0.25s;
+  margin-top: 1rem;
+    font-size: var(--phone-font-small);
+  }
+  
+  input[type='submit']:hover {
+    transform: scale(1.05);
+  }
+  
+  input[type='submit']:focus {
+    transform: scale(1.05);
+  }
+  /* ERROR MESSAGE STYLINg */
+
+  .error-message{
+    border: 1px solid black;
+    padding: 1em;
+  }
+
+  /* START MEDIA QUERY */
+
+  @media (min-width: 1000px) {
+    .navigation{
+        margin-right: 3rem;
+    }
+    a > img{
+        width: 200px;
+        height: auto;
+    }
+  }

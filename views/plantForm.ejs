@@ -3,7 +3,7 @@
 <form action="/create-stekje" method="post">
   <% if(locals.errors !== undefined){ %> <% errors.forEach(error => { %> <%
   if(error.field == "naam") {%>
-  <p>
+  <p class="error-message">
     Oeps! Het lijkt erop dat je de naam van je plant niet goed hebt ingevuld
   </p>
   <% } %> <% }) %> <% } %> <%= locals.newData %>
@@ -56,14 +56,13 @@
       value="<% locals.verpotten ?? '' %>"
     />
 
-    <label for="description">Beschrijving</label>
-    <textarea
-      name="description"
-      id="description"
-      cols="30"
-      rows="10"
+    <label for="image">Foto url van de plant</label>
+    <input
+    type="text"
+      name="image"
+      id="image"
       placeholder="..."
-    ></textarea>
+    ></input>
     <input type="submit" value="Verstuur" />
   </fieldset>
 </form>
