@@ -1,10 +1,11 @@
 
 *{
     box-sizing: border-box;
+    margin: 0 auto;
 }
 img{
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 :root{
     /* font sizes */
@@ -13,9 +14,13 @@ img{
  --phone-font-medium: 3rem;
  --phone-font-huge: 5rem;
 --desktop-font-small: 2rem;
- /* colors */
+  /* colors */
+
  --color-black: black;
+ --color-primary:green;
+ --color-secondary: blue;
 }
+
 
 body{
     overflow-x: hidden;
@@ -58,6 +63,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin: 5rem auto;
+    margin-bottom: 10rem;
 }
 
 .instruction-button > button{
@@ -79,14 +85,16 @@ h1 {
 }
 
 .plant-instruction > h2, ol{
-    left: 2rem;
+    
     position: relative;
     font-size: var(--phone-font-small);
+    margin-left: 2rem;
 }
 
 ol{
     margin: 0;
     padding: 0;
+    font-size: var(--phone-font-betweenium);
 }
 .plant-instruction > h2 {
     font-size: var(--phone-font-medium);
@@ -97,93 +105,39 @@ ol{
 
 /* succes message styling */
 .succes-container{
-    width: 20rem;
-    margin: auto;
+    width: 25rem;
+    margin:.5rem auto;
 }
 
 #post-succes{
     font-size: var(--phone-font-betweenium);
-    text-align: center;
-    margin: 1rem;
+    margin-bottom: 5rem;
     border: 1px solid black;
     width: 100%;
+    text-align: center;
 }
 
-/* .plant-card-title{
-    position: relative;
-    font-size: 45px;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-.plant-container{
-   height: 200vh;
-    display: flex;
-    padding: 0 4em;
-    flex-wrap: wrap;
-    top: 80rem;
-    position: relative;
-    justify-content: space-around;
-    gap: 50px;
-    background-color: var(--background-color-green);
-
-  }
-  .plant-box {
-    top: 5%;
-    position: relative;
-    height: 35rem;
-    width: 100%;
-    max-width: 20rem;
-    cursor: pointer;
-  }
-  .plant-card {
-    transform-style: preserve-3d;
-    height: 100%;
-    width: 100%;
-    transition: 1s ease;
-  }
-  .front,
-  .back {
-    height: 100%;
-    width: 100%;
-    
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 0.4em;
-    position: absolute;
-    
-    backface-visibility: hidden;
-   
-  }
-  .front {
-    background: linear-gradient(to right, #b87613, #794707);
-  }
-  
-  .content {
-    transform: translateZ(60px);
-    font-size: large;
-  }
-
-  .back {
-    background-color: var(--background-color-blue);
-    transform: rotateY(180deg);
-  }
-  .plant-container:hover .plant-card {
-    transform: rotateY(180deg);
-  }
 .dot{
-    background-color: var(--background-color-green);
     width: 25px;
     height: 25px;
     border-radius: 50px;
     z-index: 1;
     position: absolute;
-    top: .2rem;
-} */
-/* backup css kaartje */
+    top: 1rem;
+    background-color: black;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+ul, h2{
+  margin-top: 2rem;
+}
+/* plant card styling */
+.plant-page-header{
+  text-align: center;
+  margin: 2rem;
+  font-size: var(--phone-font-medium);
+}
+
 .plant-container{
 background-color: transparent;
 border: 1px solid black;
@@ -191,19 +145,33 @@ perspective: 1000px;
 position: relative;
 display: flex;
 flex-direction: row;
-justify-content: space-around;
+flex-wrap: wrap;
+width: 100%;
+height: auto;
+gap: 2rem;
+justify-content: center;
+text-align: center;
+font-size: var(--phone-font-small);
 }
 
 .plant-card{
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 15rem;
+    height: 20rem;
     transition: transform .8s;
     transform-style: preserve-3d;
+   
+    
 }
 
-.plant-container:hover .plant-card{
-    transform: rotateY(180deg);
+.front > img{
+  margin-top: 2rem;
+}
+
+
+
+.plant-card-flip:hover .plant-card{
+  transform: rotateY(180deg);
 
 }
 
@@ -215,11 +183,23 @@ justify-content: space-around;
 }
 
 .front{
-    background-color: red;
+   border: 1px solid black;
 }
 .back{
     transform: rotateY(180deg);
-    background-color: blue;
+    border: 1px solid black;
+}
+
+li > span{
+  font-weight: bold;
+}
+li{
+  padding: .5rem;
+  text-align: left;
+}
+ul{
+  list-style-type: none;
+  
 }
 
 /* FORM STYLING */
@@ -284,9 +264,17 @@ legend{
   @media (min-width: 1000px) {
     .navigation{
         margin-right: 3rem;
+        font-size: var(--desktop-font-small);
     }
     a > img{
         width: 200px;
         height: auto;
+    }
+
+    .plant-instruction{
+      width: 40rem;
+    }
+    .plant-instruction > ol{
+      margin-left: 2rem;
     }
   }
