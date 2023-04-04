@@ -1,14 +1,16 @@
 <%- include('./partials/header.ejs') %>
 <main>
   <!-- HOMEPAGE -->
-  <h1>Plant Swap</h1>
+  <div class="split-background">
+    <h1>Plant Swap</h1>
 
-  <section class="split-background">
-    <a href="#stekjes" class="homepage-button-left">Stekjes</a>
-    <a href="/create-stekje" class="homepage-button-right">Ruilen</a>
-  </section>
-  <div class="instruction-button">
-    <button><a href="#instruction">Hoe werkt het?</a></button>
+    <section class="homepage-header">
+      <a href="#stekjes" class="homepage-button-left">Stekjes</a>
+      <a href="/create-stekje" class="homepage-button-right">Ruilen</a>
+    </section>
+    <div class="instruction-button">
+      <button><a href="#instruction">Hoe werkt het?</a></button>
+    </div>
   </div>
 
   <!-- START INSTRUCTIONS -->
@@ -16,16 +18,23 @@
     <h2 id="instruction">Hoe het werkt</h2>
     <ol>
       <li>
-        stap 1
         <p>Dit is hoe de eerste stap werkt</p>
       </li>
+      <img
+        class="plant-pot-divider"
+        src="/assets/plant-pot-divider.png"
+        alt=""
+      />
       <li>
-        stap 2
-        <p>Dit is hoe de eerste stap werkt</p>
+        <p>Dit is hoe de tweede stap werkt</p>
       </li>
+      <img
+        class="plant-pot-divider"
+        src="/assets/plant-pot-divider.png"
+        alt=""
+      />
       <li>
-        stap 3
-        <p>Dit is hoe de eerste stap werkt</p>
+        <p>Dit is hoe de derde stap werkt</p>
       </li>
     </ol>
   </article>

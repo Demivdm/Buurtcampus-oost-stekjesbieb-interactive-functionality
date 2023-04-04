@@ -2,12 +2,15 @@
 *{
     box-sizing: border-box;
     margin: 0 auto;
+    padding: 0 ;
 }
 img{
     width: 150px;
     height: 150px;
 }
 :root{
+
+  --border-radius: 5px;
     /* font sizes */
  --phone-font-small: 1.2rem;
  --phone-font-betweenium: 2rem;
@@ -17,13 +20,18 @@ img{
   /* colors */
 
  --color-black: black;
- --color-primary:green;
- --color-secondary: blue;
+ --color-primary: #2c2e65;
+ --color-secondary:#789d4a;
+ --color-tetrary:#8a8cc7;
+ --color-white:white;
+ 
 }
 
 
 body{
     overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-primary);
 /* nav styling */
 }
 .navigation{
@@ -35,13 +43,21 @@ body{
     margin: 0 auto;
     list-style-type: none;
     font-size: var(--phone-font-small);
+    background-color:var(--color-white);
+    width: 100%;
+  
     
     
+}
+.navigation > li {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border-radius: var(--border-radius);
 }
 
 li > a{
     text-decoration: none;
-    color: var(--color-black);
+    color: var(--color-white);
 }
 /* end of nav styling */
 
@@ -50,24 +66,82 @@ h1 {
     text-align: center;
     font-size: var(--phone-font-huge);
     margin-bottom: 10rem;
+    top: 2rem;
+    color: var(--color-white);
 }
-
 .split-background{
+    
+  background: linear-gradient(
+      to right,
+      #2c2e65 0%,
+      #2c2e65 50%,
+      #789d4a 50%,
+      #789d4a 100%
+    );
+    width: 100%;
+  }
+
+  nav{
+    
+    box-shadow: 0px 10px 10px black;
+    z-index: 1;
+    position: relative;
+    width: 100%;
+  }
+
+  .homepage-button-left{
+    background-color: var(--color-secondary);
+    height: 5rem;
+    padding: .5rem;
+    color: var(--color-white);
+    text-decoration: none;
+   padding: 1rem;
+   border-radius: var(--border-radius);
+  }
+
+  .homepage-button-right{
+    background-color: var(--color-primary);
+    height: 5rem;
+    padding: .5rem;
+    color:var(--color-white);
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+
+.homepage-header{
     display: flex;
     justify-content: space-around;
     font-size: var(--phone-font-medium);
-    height: 30vh;
+    height: 55vh;
+    
 }
 
 .instruction-button{
     display: flex;
     justify-content: center;
-    margin: 5rem auto;
-    margin-bottom: 10rem;
+    bottom: 5rem;
+    position: relative;
+    border-radius: var(--border-radius);
+    
 }
 
 .instruction-button > button{
     font-size: var(--phone-font-betweenium);
+    padding: 1rem;
+    background: linear-gradient(
+      to right,
+      #789d4a 0%,
+      #789d4a  50%,
+       #2c2e65 50%,
+       #2c2e65 100%
+    );
+    border: 0px;
+    
+}
+button > a{
+  color: var(--color-white);
+    text-decoration: none;
 }
 
 /* eind homepage styling */
@@ -78,9 +152,12 @@ h1 {
    
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     width: 25rem;
     margin: 5rem auto;
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius);
+    padding-bottom: 1rem;
+   align-items: center;
     
 }
 
@@ -89,25 +166,41 @@ h1 {
     position: relative;
     font-size: var(--phone-font-small);
     margin-left: 2rem;
+    color: var(--color-white);
+   
+    
 }
 
 ol{
     margin: 0;
     padding: 0;
     font-size: var(--phone-font-betweenium);
+    list-style: none;
 }
 .plant-instruction > h2 {
     font-size: var(--phone-font-medium);
+    left: 50%;
+    transform: translate(-75%, -40%);
 }
 
+.plant-pot-divider{
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  height: auto;
+  margin-top: 2rem;
+}
 
-/* start kaartjes styling */
 
 /* succes message styling */
 .succes-container{
     width: 25rem;
     margin:.5rem auto;
-}
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border-radius: var(--border-radius);
+    
+  }
 
 #post-succes{
     font-size: var(--phone-font-betweenium);
@@ -115,7 +208,10 @@ ol{
     border: 1px solid black;
     width: 100%;
     text-align: center;
+    padding: 1rem 1rem 1rem 1rem;
 }
+
+/* plant card styling */
 
 .dot{
     width: 25px;
@@ -124,23 +220,25 @@ ol{
     z-index: 1;
     position: absolute;
     top: 1rem;
-    background-color: black;
+    background-color: var(--color-primary);
     left: 50%;
     transform: translate(-50%, -50%);
+    
 }
 ul, h2{
   margin-top: 2rem;
 }
-/* plant card styling */
+
 .plant-page-header{
   text-align: center;
   margin: 2rem;
+  margin-bottom: 5rem;
   font-size: var(--phone-font-medium);
+  color: var(--color-white);
 }
 
 .plant-container{
 background-color: transparent;
-border: 1px solid black;
 perspective: 1000px;
 position: relative;
 display: flex;
@@ -157,9 +255,12 @@ font-size: var(--phone-font-small);
 .plant-card{
     position: relative;
     width: 15rem;
-    height: 20rem;
+    height: 35rem;
     transition: transform .8s;
     transform-style: preserve-3d;
+    background-color: var(--color-secondary);
+    box-shadow: 0px 5px 10px black;
+    border-radius: var(--border-radius);
    
     
 }
@@ -206,17 +307,24 @@ ul{
 form {
     width: 50vw;
     margin: auto;
-    margin-top: 1vh;
+    margin-top: 5vh;
     margin-bottom: 5vh;
     font-size: var(--phone-font-small);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    box-shadow: 0px 10px 10px var(--color-black);
+    border-radius: var(--border-radius);
   }
   
 legend{
     font-size: var(--phone-font-betweenium);
+    padding-top: 3rem;
+    
 }
   
   fieldset {
     padding: 1rem;
+    border: 0;
   }
   
   label {
@@ -243,10 +351,14 @@ legend{
     transition: 0.25s;
   margin-top: 1rem;
     font-size: var(--phone-font-small);
+     background-color: var(--color-primary);
+     color: var(--color-white);
+     border: 0;
+     padding: 1em;
   }
   
   input[type='submit']:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
   
   input[type='submit']:focus {
@@ -255,8 +367,11 @@ legend{
   /* ERROR MESSAGE STYLINg */
 
   .error-message{
-    border: 1px solid black;
+    background-color: rgb(255, 134, 134);
     padding: 1em;
+    color: var(--color-white);
+    font-size: var(--phone-font-betweenium);
+    border-radius: var(--border-radius);
   }
 
   /* START MEDIA QUERY */
