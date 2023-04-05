@@ -1,11 +1,14 @@
 <%- include('./partials/header.ejs') %>
 
 <form action="/create-stekje" method="post">
+  <!-- als local niet gedefineerd is dan moet de error message uitgevoerd worden -->
   <% if(locals.errors !== undefined){ %> <% errors.forEach(error => { %> <%
+    <!-- error wordt alleen aangeroepen op het veld naam -->
   if(error.field == "naam") {%>
   <p class="error-message">
     Oeps! Het lijkt erop dat je de naam van je plant niet goed hebt ingevuld
   </p>
+  <!-- Hier wordt newData toegevoegd aan de pagina -->
   <% } %> <% }) %> <% } %> <%= locals.newData %>
 
   <fieldset>
