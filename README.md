@@ -62,11 +62,24 @@ Progressive enhancement is het in lagen bouwen van je website, zodat deze toegan
   ✅Mobiele versie
   
   ✅Desktop versie
+  
+  ✅Post functie
+  
+  ✅Formulier
+  
+  ✅Stekjes overzicht
+  
+  ✅Data uit de API
  
 
 **Should have**
 
-  ❌styling
+  ✅styling
+  
+  ✅progressive enhancement
+  
+  ❌Navbar op mobiel kunnen schuiven
+  
 
 **Could have**
 
@@ -76,7 +89,7 @@ Progressive enhancement is het in lagen bouwen van je website, zodat deze toegan
 
   🦸‍♀️Nothing is impossible
 
-_tip!_ check mijn [issues](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/issues) om te kijken waar ik momenteel mee bezig ben.
+_tip!_ Check mijn [issues](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/issues) om te kijken waar ik momenteel mee bezig ben.
 
 ## Licentie
 
