@@ -25,7 +25,9 @@ Userstory: Als buurtbewoner wil ik kunnen zien welke stekjes momenteel in de ste
 
 ## Kenmerken
 
-Dit project is gemaakt met HTML, CSS en Javascript. Verder staat hieronder een korte lijst met gebruikte tools en middelen.
+Dit project is gemaakt met HTML, CSS en Javascript. Verder staat hieronder een korte lijst met gebruikte tools en middelen. 
+
+Progressive enhancement is het in lagen bouwen van je website, zodat deze toegankelijk is voor iedereen op ieder device. Wil je weten wat ik aan progressive enhancement heb gedaan? Klik dan [hier](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/wiki/Bouwen%F0%9F%9B%A0#progressive-enhancement)
 
 **Tools**
 
@@ -60,11 +62,24 @@ Dit project is gemaakt met HTML, CSS en Javascript. Verder staat hieronder een k
   ✅Mobiele versie
   
   ✅Desktop versie
+  
+  ✅Post functie
+  
+  ✅Formulier
+  
+  ✅Stekjes overzicht
+  
+  ✅Data uit de API
  
 
 **Should have**
 
-  ❌styling
+  ✅styling
+  
+  ✅progressive enhancement
+  
+  ❌Navbar op mobiel kunnen schuiven
+  
 
 **Could have**
 
@@ -74,7 +89,7 @@ Dit project is gemaakt met HTML, CSS en Javascript. Verder staat hieronder een k
 
   🦸‍♀️Nothing is impossible
 
-_tip!_ check mijn [issues](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/issues) om te kijken waar ik momenteel mee bezig ben.
+_tip!_ Check mijn [issues](https://github.com/Demivdm/Buurtcampus-oost-stekjesbieb-interactive-functionality/issues) om te kijken waar ik momenteel mee bezig ben.
 
 ## Licentie
 
