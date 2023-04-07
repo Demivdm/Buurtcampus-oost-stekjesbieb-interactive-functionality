@@ -219,10 +219,9 @@ ol{
     border-radius: 50px;
     z-index: 1;
     position: absolute;
-    top: 1rem;
+    inset: .2rem 0 7rem 0;
     background-color: var(--color-primary);
-    left: 50%;
-    transform: translate(-50%, -50%);
+   
     
 }
 ul, h2{
