@@ -1,5 +1,7 @@
 # Stekjesbieb Buurtcampus oost
 
+![plant swap final mock up](https://user-images.githubusercontent.com/112861166/230124162-c0c09551-e466-44fe-958c-12d55f15cf1e.jpg)
+
 Dit is een pagina voor buurtcampus oost. Op deze pagina kan de gebruiker de huidige stekjes bekijken en eventueel ruilen.
 
 ## Inhoudsopgave
