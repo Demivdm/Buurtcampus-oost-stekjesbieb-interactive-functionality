@@ -3,6 +3,7 @@
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0 ;
+    scroll-behavior: smooth;
 }
 img{
     width: 150px;
@@ -97,6 +98,7 @@ h1 {
     text-decoration: none;
    padding: 1rem;
    border-radius: var(--border-radius);
+   transition: transform 0.3s ease-in-out;
   }
 
   .homepage-button-right{
@@ -107,6 +109,15 @@ h1 {
     text-decoration: none;
     padding: 1rem;
     border-radius: var(--border-radius);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .homepage-button-left:hover{
+    transform: scale(1.2);
+  }
+
+  .homepage-button-right:hover{
+    transform: scale(1.2);
   }
 
 .homepage-header{
@@ -124,6 +135,7 @@ h1 {
     position: relative;
     border-radius: var(--border-radius);
     
+    
 }
 
 .instruction-button > button{
@@ -137,7 +149,12 @@ h1 {
        #2c2e65 100%
     );
     border: 0px;
+    transition: transform 0.3s ease-in-out;
     
+}
+.instruction-button > button:hover{
+  transform: scale(1.2);
+  
 }
 button > a{
   color: var(--color-white);
@@ -260,12 +277,20 @@ font-size: var(--phone-font-small);
     background-color: var(--color-secondary);
     box-shadow: 0px 5px 10px black;
     border-radius: var(--border-radius);
+    
+    
    
     
 }
 
 .front > img{
   margin-top: 2rem;
+  max-width: 100%; /* Ensure the image doesn't exceed the card width */
+  max-height: 100%;
+}
+
+.front > h2{
+  margin: 1rem;
 }
 
 
@@ -280,14 +305,25 @@ font-size: var(--phone-font-small);
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    overflow: hidden;
 }
+
 
 .front{
    border: 1px solid black;
 }
 .back{
-    transform: rotateY(180deg);
-    border: 1px solid black;
+  transform: rotateY(180deg);
+  border: 1px solid black;
+  overflow-y: auto; 
+}
+
+.back ul{
+  padding: 1rem;
+}
+.back li {
+  padding: 0.5rem;
+  text-align: left;
 }
 
 li > span{
